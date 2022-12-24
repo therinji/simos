@@ -11,32 +11,7 @@ include 'header.php';
             <p class="text-muted">Semua Data Produk</p>
 
             <hr>
-            <div class="row">
-                <div class="col-md-4 mx-auto">
-                    <div class="card bg-info">
-                        <div class="card-body">
-                            <form method="get" action="produk_filter.php">
-                                <div class="form-group">
-                                    <label>Filter Produk</label>
-                                    <select name="produk" class="form-control" required="required">
-                                        <option value=""> - Pilih - </option>
-                                        <?php
-                                        $produk = mysqli_query($koneksi, "SELECT * FROM produk");
-                                        while ($d = mysqli_fetch_array($produk)) {
-                                        ?>
-                                            <option value="<?php echo $d['id_produk']; ?>"><?php echo $d['nama_produk']; ?></option>
-                                        <?php
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-                                <input type="submit" value="Tampilkan Data" class="btn btn-secondary btn-sm">
-                            </form>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+            
 
 
             <a class="btn btn-primary btn-sm mb-3" href="produk_tambah.php"><i class="fa fa-user-plus"></i> Tambah Produk</a>
@@ -47,7 +22,7 @@ include 'header.php';
             <table class="table table-bordered table-hover table-striped table-saya">
                 <thead>
                     <tr>
-                        <th>No</th>
+                        <th width="2%">No</th>
                         <th>Nama Produk</th>
                         <th>Harga Produk</th>
 
@@ -64,7 +39,7 @@ include 'header.php';
                         <tr>
                             <td><?php echo $no++; ?></td>
                             <td><?php echo $d['nama_produk']; ?></td>
-                            <td><?php echo $d['harga_produk']; ?></td>
+                            <td><?php echo 'Rp' . number_format($d['harga_produk'],2,',','.'); ?></td>
 
                             <td>
                                 <a href="produk_edit.php?id=<?php echo $d['id_produk']; ?>" class="btn btn-warning text-white btn-sm"><i class="fa fa-wrench"></i></a>

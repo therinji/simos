@@ -41,15 +41,15 @@ include 'header.php';
                                 <td>
                                     <select name="hari[]" class="form-control" required="required">
                                         <option value="">--- Pilih Hari ---</option>
-                                        <option value="senin" <?php if($j['hari_jadwal'] == 'senin') echo 'selected';?>>Senin</option>
-                                        <option value="selasa" <?php if($j['hari_jadwal'] == 'selasa') echo 'selected';?>>Selasa</option>
-                                        <option value="rabu" <?php if($j['hari_jadwal'] == 'rabu') echo 'selected';?>>Rabu</option>
-                                        <option value="kamis" <?php if($j['hari_jadwal'] == 'kamis') echo 'selected';?>>Kamis</option>
-                                        <option value="sabtu" <?php if($j['hari_jadwal'] == 'sabtu') echo 'selected';?>>Sabtu</option>
-                                        <option value="minggu" <?php if($j['hari_jadwal'] == 'minggu') echo 'selected';?>>Minggu</option>
+                                        <option value="1" <?php if($j['hari_jadwal'] == 1) echo 'selected';?>>Senin</option>
+                                        <option value="2" <?php if($j['hari_jadwal'] == 2) echo 'selected';?>>Selasa</option>
+                                        <option value="3" <?php if($j['hari_jadwal'] == 3) echo 'selected';?>>Rabu</option>
+                                        <option value="4" <?php if($j['hari_jadwal'] == 4) echo 'selected';?>>Kamis</option>
+                                        <option value="6" <?php if($j['hari_jadwal'] == 6) echo 'selected';?>>Sabtu</option>
+                                        <option value="7" <?php if($j['hari_jadwal'] == 7) echo 'selected';?>>Minggu</option>
                                     </select>
                                 </td>
-                                <input type="hidden" name="id[]" value="<?php echo $j['id_jadwal']; ?>">
+                                <input type="hidden" name="id[]" value="<?php echo $j['id_customer']; ?>">
                             </tr>
                         <?php
                             $no++;

@@ -24,7 +24,7 @@ include 'header.php';
                         </div>
 
                         <div class="form-group">
-                            <label>Harga Produk</label>
+                            <label>Harga Produk (Rp)</label>
                             <input type="number" name="harga_produk" class="form-control" required="required">
                         </div>
 

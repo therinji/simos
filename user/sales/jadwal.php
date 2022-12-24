@@ -8,7 +8,7 @@ include 'header.php';
         <div class="card-body">
 
             <h3>Jadwal Sales</h3>
-            <p class="text-muted">Jadwal kunjungan sales</p>
+            <p class="text-muted">Jadwal kunjungan harian sales</p>
 
             <hr>
             <a class="btn btn-primary btn-sm mb-3" href="jadwal_edit.php"><i class="fa fa-wrench"></i> Edit Jadwal</a>

@@ -22,7 +22,7 @@ include 'header.php';
 			<table class="table table-bordered table-hover table-striped table-saya">
 				<thead>
 					<tr>
-						<th>ID Sales</th>
+						<th width="2%">No</th>
 						<th>Nama</th>
 						<th>Alamat</th>
 						<th>Nomor HP</th>

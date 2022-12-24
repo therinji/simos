@@ -40,6 +40,7 @@
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<a class="dropdown-item" href="produk.php">Data Produk</a>
 							<a class="dropdown-item" href="sales.php">Data Sales</a>
+							<a class="dropdown-item" href="customer.php">Data Customer</a>
 						</div>
 					</li>
 					<li class="nav-item dropdown">
