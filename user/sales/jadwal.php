@@ -11,6 +11,8 @@ include 'header.php';
             <p class="text-muted">Jadwal kunjungan sales</p>
 
             <hr>
+            <a class="btn btn-primary btn-sm mb-3" href="jadwal_edit.php"><i class="fa fa-wrench"></i> Edit Jadwal</a>
+
             <a class="btn btn-success btn-sm mb-3 float-right" href="customer_cetak.php" target="_blank"><i class="fa fa-file"></i> Cetak</a>
 
 
