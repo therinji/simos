@@ -50,6 +50,8 @@ include 'header.php';
                                 <?php
                                 if($c['kunjungan_terakhir'] != '0000-00-00 00:00:00'){
                                     echo date('d-m-Y H:i:s', strtotime($c['kunjungan_terakhir']));
+                                }else{
+                                    echo "-";
                                 }
                                 ?>
                             </td>

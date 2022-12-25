@@ -33,7 +33,7 @@ include 'header.php';
                         <th>Alamat Toko</th>
                         <th>Nomor HP</th>
                         <th>Pemilik</th>
-                        <th>Kunjungan Terakhir</th>
+                        <th>Kunjungan</th>
                         <th>Status</th>
                         <th>Sales</th>
                     </tr>
@@ -51,7 +51,8 @@ include 'header.php';
                         $kunjungan = mysqli_query($koneksi, "SELECT * FROM customer, sales, jadwal where customer.id_sales = sales.id_sales and customer.id_customer = jadwal.id_customer and jadwal.hari_jadwal = '$hari'");
 
                         while ($c = mysqli_fetch_array($kunjungan)) {
-                            $tgl_terakhir = substr($c['kunjungan_terakhir'],0,10)
+                            $tgl_terakhir = substr($c['kunjungan_terakhir'],0,10);
+                            $id_customer = $c['id_customer'];
                     
                         ?>
                         <tr>
@@ -60,18 +61,19 @@ include 'header.php';
                             <td><?php echo $c['alamat_customer']; ?></td>
                             <td><?php echo $c['no_hp_customer']; ?></td>
                             <td><?php echo $c['pemilik_customer']; ?></td>
-                            <td><?php echo $c['kunjungan_terakhir']; ?></td>
-                            <td>
-                                <?php
-                                if($tgl_terakhir == $tgl_filter){
-                                    $cek = true;
-                                    echo "<span class='badge badge-success'>Sudah dikunjungi</span> ";
+                            <?php
+                                $cek_status = mysqli_query($koneksi,"SELECT * FROM kegiatan WHERE id_customer='$id_customer' and date(waktu_kegiatan)='$tgl_filter';");
+                                $jumlah = mysqli_num_rows($cek_status);
+                                if($jumlah > 0){
+                                    $d = mysqli_fetch_array($cek_status);
+
+                                    echo "<td>" . $d['waktu_kegiatan'] . "</td>";
+                                    echo "<td><span class='badge badge-success'>Sudah dikunjungi</span></td>";
                                 }else{
-                                    $cek = false;
-                                    echo "<span class='badge badge-danger'>Belum dikunjungi</span> ";
+                                    echo "<td>-</td>";
+                                    echo "<td><span class='badge badge-danger'>Belum dikunjungi</span></td>";
                                 }
-                                ?>
-                            </td>
+                            ?>
                             <td>
                                 <?php echo $c['nama']; ?>
                             </td>

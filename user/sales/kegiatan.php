@@ -37,6 +37,9 @@ include 'header.php';
                     case 7:
                         $hari_nama = 'Minggu';
                         break;
+                    default:
+                        $hari_nama ='';
+                        break;
                 }
                 
                 echo "$hari_nama, $tgl_today";
