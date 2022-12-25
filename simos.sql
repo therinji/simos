@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Des 2022 pada 06.16
+-- Waktu pembuatan: 25 Des 2022 pada 16.05
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.1.12
 
@@ -42,16 +42,24 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`id_customer`, `nama_customer`, `alamat_customer`, `no_hp_customer`, `pemilik_customer`, `id_sales`, `kunjungan_terakhir`) VALUES
-(1, 'Zaini Marketplace', 'Kedungsari', '085640053090', 'Zainali Suciadi', 5, '2022-12-22 06:50:03'),
-(4, 'Barokah Shop', 'Gondangmanis', '45645645645', 'Sulikan Mahmudi', 7, '2022-12-25 07:21:38'),
-(5, 'Mubarok Mart', 'Kedungdowo', '234234234', 'M Daniel Mubarok', 7, '0000-00-00 00:00:00'),
-(6, 'Peganjaran Jaya', 'Peganjaran', '45345456456', 'Arini Zulfa', 7, '0000-00-00 00:00:00'),
-(7, 'Khalisyah Market', 'Getas Pejaten', '546457568', 'Khalisyah Dini', 7, '2022-12-25 09:21:48'),
-(8, 'Al Laila Shop', 'Bae', '435345634', 'Ummi Handayani', 4, '0000-00-00 00:00:00'),
-(9, 'Tamara Berkah', 'Karangmalang', '5645645', 'Ihsan Nur Kholis', 4, '0000-00-00 00:00:00'),
-(10, 'Ori Snack', 'Gondosari', '5456456', 'Aldi Wicaksono', 4, '2022-12-25 07:25:42'),
-(11, 'Alfahri Shop', 'Blimbing Kidul', '7676767', 'Haikal Alfahri', 5, '0000-00-00 00:00:00'),
-(12, 'Putra Panca Shop', 'Jurang', '999938438', 'Lutfian Zainal Al Furqan', 5, '0000-00-00 00:00:00');
+(1, 'Arif Jaya', 'Jati Wetan', '234823423', 'Arif Affandi', 4, '0000-00-00 00:00:00'),
+(2, 'Leto Shop', 'Tanjung Karang', '8877121', 'Anik Budiartika', 4, '0000-00-00 00:00:00'),
+(3, 'Muhdi Market', 'Pasuruhan Kidul', '67867867', 'Ali Mahmudi', 4, '0000-00-00 00:00:00'),
+(4, 'Harsanto Jaya', 'Pasuruhan Kidul', '1221212', 'Amanda Sulistiyati', 4, '2023-01-01 20:02:10'),
+(5, 'Didik Shop', 'Jati Kulon', '239409234', 'Ahmad Hamdan', 4, '2023-01-01 20:01:36'),
+(6, 'Susi Market', 'Tanjung Karang', '6786786', 'Zulfa Nur Susianti', 4, '0000-00-00 00:00:00'),
+(7, 'Heru Jaya', 'Karangmalang', '45096485694', 'Miftahul Ulum', 5, '2023-01-01 20:03:30'),
+(8, 'Roda Lima Shop', 'Klumpit', '876786768', 'Arif Ahmad Jaelani', 5, '0000-00-00 00:00:00'),
+(9, 'Ahmad Jaya Abadi', 'Besito', '879789', 'Ahmad Ilham Adji', 5, '0000-00-00 00:00:00'),
+(10, 'Prambatan Mart', 'Prambatan Lor', '9238434', 'Nafisa Faradilla', 5, '0000-00-00 00:00:00'),
+(11, 'Al Kaesy Mart', 'Terban', '4673624', 'Nada Syaikaila', 5, '0000-00-00 00:00:00'),
+(12, 'Bagas Shop', 'Klaling', '234234', 'Bagaskara Dimastrata', 5, '0000-00-00 00:00:00'),
+(13, 'Nawa Shop', 'Jurang', '7767567', 'Ilham Syaqib', 3, '0000-00-00 00:00:00'),
+(14, 'Tiga Saudara Market', 'Jurang', '123107', 'M Wurul Tri Rahman', 3, '0000-00-00 00:00:00'),
+(15, 'Kajar Market', 'Kajar', '868578', 'Novita Dwi Salsa', 3, '0000-00-00 00:00:00'),
+(16, 'Arifin Jaya', 'Menawan', '878678678', 'Arifin Mahmudi', 3, '2022-12-25 19:43:59'),
+(17, 'Garuda Market', 'Piji', '8872112', 'Sofiatun ', 3, '2022-12-25 19:44:39'),
+(18, 'Zakiman Mart', 'Cendono', '7855534', 'M Agus Zaki', 3, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -69,16 +77,24 @@ CREATE TABLE `jadwal` (
 --
 
 INSERT INTO `jadwal` (`id_customer`, `hari_jadwal`) VALUES
-(1, 3),
-(4, 6),
-(5, 6),
-(6, 7),
-(7, 4),
-(8, 7),
-(9, 1),
-(10, 2),
+(1, 1),
+(2, 4),
+(3, 6),
+(4, 7),
+(5, 7),
+(6, 4),
+(7, 7),
+(8, 3),
+(9, 3),
+(10, 7),
 (11, 4),
-(12, 1);
+(12, 4),
+(13, 1),
+(14, 1),
+(15, 4),
+(16, 7),
+(17, 7),
+(18, 2);
 
 -- --------------------------------------------------------
 
@@ -97,9 +113,13 @@ CREATE TABLE `kegiatan` (
 --
 
 INSERT INTO `kegiatan` (`id_kegiatan`, `id_customer`, `waktu_kegiatan`) VALUES
-(1, 4, '2022-12-25 00:21:38'),
-(2, 10, '2022-12-25 00:25:42'),
-(3, 7, '2022-12-25 02:21:48');
+(1, 7, '2022-12-25 12:21:14'),
+(2, 16, '2022-12-25 12:43:59'),
+(3, 17, '2022-12-25 12:44:39'),
+(4, 4, '2022-12-25 12:45:24'),
+(5, 5, '2023-01-01 13:01:36'),
+(6, 4, '2023-01-01 13:02:10'),
+(7, 7, '2023-01-01 13:03:30');
 
 -- --------------------------------------------------------
 
@@ -120,10 +140,21 @@ CREATE TABLE `orderan` (
 --
 
 INSERT INTO `orderan` (`id_order`, `id_produk`, `jml_order`, `id_customer`, `tgl_order`) VALUES
-(2, 3, 68, 7, '2022-12-25'),
-(3, 3, 50, 4, '2022-12-25'),
-(4, 9, 45, 7, '2022-12-25'),
-(5, 12, 21, 4, '2022-12-25');
+(1, 1, 17, 7, '2022-12-25'),
+(2, 2, 50, 7, '2022-12-25'),
+(3, 5, 121, 16, '2022-12-25'),
+(4, 6, 29, 16, '2022-12-25'),
+(5, 4, 56, 16, '2022-12-25'),
+(6, 7, 307, 17, '2022-12-25'),
+(7, 8, 25, 4, '2022-12-25'),
+(8, 9, 12, 4, '2022-12-25'),
+(9, 9, 32, 4, '2022-12-25'),
+(10, 10, 19, 4, '2022-12-25'),
+(11, 1, 10, 5, '2023-01-01'),
+(12, 3, 40, 5, '2023-01-01'),
+(13, 5, 29, 4, '2023-01-01'),
+(14, 7, 34, 7, '2023-01-01'),
+(15, 9, 45, 7, '2023-01-01');
 
 -- --------------------------------------------------------
 
@@ -142,16 +173,16 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`id_produk`, `nama_produk`, `harga_produk`) VALUES
-(2, 'Tango Vanillaz', 809900),
-(3, 'Roti Boy', 45009),
-(6, 'Tango Latte', 809900),
-(7, 'Tango Chocolate', 709900),
-(8, 'Tango Yogurt', 619100),
-(9, 'Tango Bubble Gum', 599910),
-(10, 'Tango Coffee', 919890),
-(11, 'Tango Sandwich', 930000),
-(12, 'Tango Chees', 694600),
-(13, 'Tango Mocha', 740090);
+(1, 'Makaroni pedas', 120000),
+(2, 'Makaroni Pedas Rumput Laut', 145000),
+(3, 'Roti Aoka Keju', 205000),
+(4, 'Roti Aoka Vanilla', 230000),
+(5, 'Tango Chocolate', 260000),
+(6, 'Tango Strawberry', 258000),
+(7, 'Indomie Goreng', 165000),
+(8, 'Indomie Soto Mie', 140000),
+(9, 'Indomie Kebab Rendang', 180500),
+(10, 'Indomie Seblak Hot Jeletot', 165000);
 
 -- --------------------------------------------------------
 
@@ -171,9 +202,9 @@ CREATE TABLE `sales` (
 --
 
 INSERT INTO `sales` (`id_sales`, `nama`, `alamat`, `no_hp`) VALUES
-(4, 'M Agung Rahmawan', 'Karangmalang', '121212'),
-(5, 'Zaini Suciadi', 'Kedungsari', '2323'),
-(7, 'Rindho Aji', 'Pasuruhan Lor', '1234234235');
+(3, 'Zaini Suciadi', 'Kedungsari', '1121312123'),
+(4, 'Rindho Aji', 'Pasuruhan Lor', '234234234'),
+(5, 'Agung Rahmawan', 'Karangmalang', '12312423452');
 
 -- --------------------------------------------------------
 
@@ -194,10 +225,10 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `jabatan`) VALUES
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin'),
-(4, 'agung', '202cb962ac59075b964b07152d234b70', 'sales'),
-(5, 'zaini', '202cb962ac59075b964b07152d234b70', 'sales'),
-(7, 'rindho', '202cb962ac59075b964b07152d234b70', 'sales'),
-(8, 'super', '1b3231655cebb7a1f783eddf27d254ca', 'supervisor');
+(2, 'super', '1b3231655cebb7a1f783eddf27d254ca', 'supervisor'),
+(3, 'zaini', '202cb962ac59075b964b07152d234b70', 'sales'),
+(4, 'rindho', '202cb962ac59075b964b07152d234b70', 'sales'),
+(5, 'agung', '202cb962ac59075b964b07152d234b70', 'sales');
 
 --
 -- Indexes for dumped tables
@@ -258,43 +289,43 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT untuk tabel `jadwal`
 --
 ALTER TABLE `jadwal`
-  MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_customer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT untuk tabel `kegiatan`
 --
 ALTER TABLE `kegiatan`
-  MODIFY `id_kegiatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_kegiatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `orderan`
 --
 ALTER TABLE `orderan`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `id_sales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_sales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
