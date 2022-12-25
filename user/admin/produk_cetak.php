@@ -12,8 +12,8 @@
 <body>
 
     <?php
-    include 'cek_login.php';
-    include '../koneksi.php';
+    include 'header.php';
+    include '../../koneksi.php';
     ?>
 
     <h3 class="text-center mb-4">Laporan Data Produk</h3>
@@ -22,7 +22,7 @@
     <table class="table table-bordered table-hover table-striped table-saya">
         <thead>
             <tr>
-                <th>No</th>
+                <th width="2%">No</th>
                 <th>Nama</th>
                 <th>Harga Produk</th>
 
@@ -38,7 +38,7 @@
                 <tr>
                     <td><?php echo $no++; ?></td>
                     <td><?php echo $d['nama_produk']; ?></td>
-                    <td><?php echo $d['harga_produk']; ?></td>
+                    <td><?php echo 'Rp' . number_format($d['harga_produk'],2,',','.'); ?></td>
 
                 </tr>
             <?php

@@ -19,7 +19,7 @@ include 'header.php';
                 </div>
                 <div class="col-md-2 mt-5">
                     <button type="submit" class="btn btn-primary btn-sm text-light"><i class="fa fa-filter"></i> Filter</button>
-                    <a class="btn btn-success btn-sm" href="laporan_order.php" target="_blank"><i class="fa fa-file"></i> Cetak</a>
+                    <a class="btn btn-success btn-sm" href="order_cetak.php" target="_blank"><i class="fa fa-file"></i> Cetak</a>
                 </div>
                 
             </form>

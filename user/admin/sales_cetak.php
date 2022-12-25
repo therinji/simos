@@ -10,8 +10,8 @@
 <body>
 
 	<?php
-	include 'cek_login.php';
-	include '../koneksi.php';
+	include 'header.php';
+	include '../../koneksi.php';
 	?>
 
 	<h3 class="text-center mb-4">Laporan Data Sales</h3>
