@@ -19,8 +19,7 @@ include 'header.php';
                 </div>
                 <div class="col-md-2 mt-5">
                     <button type="submit" class="btn btn-primary btn-sm text-light"><i class="fa fa-filter"></i> Filter</button>
-                    <?php if(isset($_GET['tgl_awal']) && isset($_GET['tgl_akhir']) ) echo "<a href='" . base_url() . "gudang/transaksi' class='btn btn-secondary btn-sm text-light'><i class='fa fa-sync'></i> Reset</a>"?>
-                    <a class="btn btn-success btn-sm" href="cetak.php" target="_blank"><i class="fa fa-file"></i> Cetak</a>
+                    <a class="btn btn-success btn-sm" href="laporan_order.php" target="_blank"><i class="fa fa-file"></i> Cetak</a>
                 </div>
                 
             </form>

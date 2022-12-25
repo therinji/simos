@@ -1,44 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cetak Data Order</title>
+
+	<link href="../assets/css/bootstrap.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="../assets/js/jquery.js"></script>
+	<script type="text/javascript" src="../assets/js/bootstrap.js"></script>
+</head>
+<body>
+
 <?php
 include 'header.php';
-
+include '../../koneksi.php';
 ?>
 
-<div class="container-fluid">
+    <h3 class="text-center mb-4">Laporan Monitoring Sales</h3>
 
-    <div class="card">
-        <div class="card-body">
-
-            <h3>Monitoring Sales</h3>
-            <p class="text-muted">Semua Data kunjungan sales</p>
-
-            <hr>
-            <form action="" method="get" class="row g-3">
-                <div class="mb-2 col-md-5">
-                    <label for="tgl" class="col-form-label">Tanggal</label>
-                    <input type="date" class="form-control" name="tgl" value="<?php if(isset($_GET['tgl'])) echo $_GET['tgl'];?>" required>
-                </div>
-                <div class="col-md-2 mt-5">
-                    <button type="submit" class="btn btn-primary btn-sm text-light"><i class="fa fa-filter"></i> Filter</button>
-                    <a class="btn btn-success btn-sm" href="laporan_monitoring.php?tgl=<?php if(isset($_GET['tgl'])){echo $_GET['tgl'];}?>" target="_blank"><i class="fa fa-file"></i> Cetak</a>
-                </div>
-                
-            </form>
             
-            <table class="table table-bordered table-hover table-striped table-saya">
-                <thead>
-                    <tr>
-                        <th width="2%">No</th>
-                        <th>Nama Toko</th>
-                        <th>Alamat Toko</th>
-                        <th>Nomor HP</th>
-                        <th>Pemilik</th>
-                        <th>Kunjungan</th>
-                        <th>Status</th>
-                        <th>Sales</th>
-                    </tr>
-                </thead>
-
-                <tbody>
+    <table class="table table-bordered table-hover table-striped table-saya">
+        <thead>
+            <tr>
+                
+                <th width="2%">No</th>
+                <th>Nama Toko</th>
+                <th>Alamat Toko</th>
+                <th>Nomor HP</th>
+                <th>Pemilik</th>
+                <th>Kunjungan</th>
+                <th>Status</th>
+                <th>Sales</th>
+            </tr>
+        </thead>
+        <tbody>
                     <?php
                     $no = 1;
                     
@@ -66,10 +59,10 @@ include 'header.php';
                                     $d = mysqli_fetch_array($cek_status);
 
                                     echo "<td>" . $d['waktu_kegiatan'] . "</td>";
-                                    echo "<td><span class='badge badge-success'>Sudah dikunjungi</span></td>";
+                                    echo "<td>Sudah dikunjungi</td>";
                                 }else{
                                     echo "<td>-</td>";
-                                    echo "<td><span class='badge badge-danger'>Belum dikunjungi</span></td>";
+                                    echo "<td>Belum dikunjungi</td>";
                                 }
                             ?>
                             <td>
@@ -82,13 +75,10 @@ include 'header.php';
                             ?>
                 </tbody>
 
-            </table>
 
-        </div>
-    </div>
-
-</div>
-
-<?php
-include 'footer.php';
-?>
+    </table>
+    <script type="text/javascript">
+		window.print();
+	</script>
+  </body>
+  </html>

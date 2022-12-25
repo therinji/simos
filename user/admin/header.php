@@ -51,9 +51,6 @@
 							<a class="dropdown-item" href="jadwal.php"> Jadwal Sales</a>
 						</div>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="ganti_password.php"><i class="fa fa-lock"></i> Ganti Password</a>
-					</li>
 				</ul>
 
 				<ul class="navbar-nav ml-auto">
