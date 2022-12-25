@@ -15,18 +15,16 @@ include 'header.php';
             <form action="" method="get" class="row g-3">
                 <div class="mb-2 col-md-5">
                     <label for="tgl" class="col-form-label">Tanggal</label>
-                    <input type="date" class="form-control" name="tgl" required>
+                    <input type="date" class="form-control" name="tgl" value="<?php if(isset($_GET['tgl'])) echo $_GET['tgl'];?>" required>
                 </div>
                 <div class="col-md-2 mt-5">
                     <button type="submit" class="btn btn-primary btn-sm text-light"><i class="fa fa-filter"></i> Filter</button>
                     <?php if(isset($_GET['tgl_awal']) && isset($_GET['tgl_akhir']) ) echo "<a href='" . base_url() . "gudang/transaksi' class='btn btn-secondary btn-sm text-light'><i class='fa fa-sync'></i> Reset</a>"?>
-                    
+                    <a class="btn btn-success btn-sm" href="customer_cetak.php" target="_blank"><i class="fa fa-file"></i> Cetak</a>
                 </div>
                 
             </form>
-            <a class="btn btn-primary btn-sm mb-3" href="customer_tambah.php"><i class="fa fa-user-plus"></i> Tambah Customer</a>
-
-            <a class="btn btn-success btn-sm mb-3 float-right" href="customer_cetak.php" target="_blank"><i class="fa fa-file"></i> Cetak</a>
+            
             <table class="table table-bordered table-hover table-striped table-saya">
                 <thead>
                     <tr>
@@ -75,7 +73,7 @@ include 'header.php';
                                 ?>
                             </td>
                             <td>
-                                
+                                <?php echo $c['nama']; ?>
                             </td>
                         </tr>
                             <?php
