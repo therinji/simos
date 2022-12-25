@@ -46,7 +46,13 @@ include 'header.php';
                             <td><?php echo $c['no_hp_customer']; ?></td>
                             <td><?php echo $c['pemilik_customer']; ?></td>
                             <td><?php echo $c['nama']; ?></td>
-                            <td><?php echo $c['kunjungan_terakhir']; ?></td>
+                            <td>
+                                <?php
+                                if($c['kunjungan_terakhir'] != '0000-00-00 00:00:00'){
+                                    echo date('d-m-Y H:i:s', strtotime($c['kunjungan_terakhir']));
+                                }
+                                ?>
+                            </td>
 
                             <td>
                                 <a href="customer_edit.php?id=<?php echo $c['id_customer']; ?>" class="btn btn-warning text-white btn-sm"><i class="fa fa-wrench"></i></a>

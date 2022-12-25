@@ -48,6 +48,8 @@
 						</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							<a class="dropdown-item" href="jadwal.php"> Jadwal Sales</a>
+							<a class="dropdown-item" href="kegiatan.php"> Kegiatan Sales</a>
+							<a class="dropdown-item" href="order.php"> Order</a>
 						</div>
 					</li>
 					<li class="nav-item">

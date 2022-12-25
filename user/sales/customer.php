@@ -21,7 +21,7 @@ include 'header.php';
             <table class="table table-bordered table-hover table-striped table-saya">
                 <thead>
                     <tr>
-                        <th>No</th>
+                        <th width="2%">No</th>
                         <th>Nama Toko</th>
                         <th>Alamat Toko</th>
                         <th>Nomor HP</th>
@@ -35,8 +35,9 @@ include 'header.php';
 
                 <tbody>
                     <?php
+                    $id_sales = $_SESSION['id_user'];
                     $no = 1;
-                    $customer = mysqli_query($koneksi, "SELECT * FROM customer, sales where customer.id_sales = sales.id_sales ORDER BY id_customer ASC");
+                    $customer = mysqli_query($koneksi, "SELECT * FROM customer, sales where customer.id_sales = sales.id_sales and customer.id_sales = '$id_sales' ORDER BY id_customer ASC");
                     while ($c = mysqli_fetch_array($customer)) {
                     ?>
                         <tr>
@@ -46,7 +47,13 @@ include 'header.php';
                             <td><?php echo $c['no_hp_customer']; ?></td>
                             <td><?php echo $c['pemilik_customer']; ?></td>
                             <td><?php echo $c['nama']; ?></td>
-                            <td><?php echo $c['kunjungan_terakhir']; ?></td>
+                            <td>
+                                <?php
+                                if($c['kunjungan_terakhir'] != '0000-00-00 00:00:00'){
+                                    echo date('d-m-Y H:i:s', strtotime($c['kunjungan_terakhir']));
+                                }
+                                ?>
+                            </td>
 
                             <td>
                                 <a href="customer_edit.php?id=<?php echo $c['id_customer']; ?>" class="btn btn-warning text-white btn-sm"><i class="fa fa-wrench"></i></a>

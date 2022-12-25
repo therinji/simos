@@ -43,11 +43,6 @@ include 'header.php';
                                 <label>Pemilik</label>
                                 <input type="text" name="pemilik_customer" class="form-control" required="required" value="<?php echo $c['pemilik_customer']; ?>">
                             </div>
-                            <div class="form-group">
-                                <label>Sales</label>
-                                <input type="text" name="id_sales" class="form-control" required="required" value="<?php echo $c['id_sales']; ?>">
-                            </div>
-                            
                             <input type="submit" name="submit" value="Simpan" class="btn btn-primary btn-sm">
 
                         </form>
