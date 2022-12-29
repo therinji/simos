@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 25 Des 2022 pada 16.05
+-- Waktu pembuatan: 29 Des 2022 pada 14.49
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.1.12
 
@@ -193,18 +193,24 @@ INSERT INTO `produk` (`id_produk`, `nama_produk`, `harga_produk`) VALUES
 CREATE TABLE `sales` (
   `id_sales` int(11) NOT NULL,
   `nama` varchar(50) NOT NULL,
+  `nik` varchar(16) NOT NULL,
+  `tempat_lahir` varchar(30) NOT NULL,
+  `tgl_lahir` date NOT NULL,
   `alamat` varchar(100) NOT NULL,
-  `no_hp` varchar(50) NOT NULL
+  `no_hp` varchar(50) NOT NULL,
+  `jam_mulai` time NOT NULL,
+  `jam_berakhir` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data untuk tabel `sales`
 --
 
-INSERT INTO `sales` (`id_sales`, `nama`, `alamat`, `no_hp`) VALUES
-(3, 'Zaini Suciadi', 'Kedungsari', '1121312123'),
-(4, 'Rindho Aji', 'Pasuruhan Lor', '234234234'),
-(5, 'Agung Rahmawan', 'Karangmalang', '12312423452');
+INSERT INTO `sales` (`id_sales`, `nama`, `nik`, `tempat_lahir`, `tgl_lahir`, `alamat`, `no_hp`, `jam_mulai`, `jam_berakhir`) VALUES
+(3, 'Zaini Suciadi', '4678654323987654', 'Kudus', '2000-12-21', 'Kedungsari', '1121312123', '07:00:00', '15:00:00'),
+(4, 'Rindho Aji', '9876787412002178', 'Kudus', '2000-04-27', 'Pasuruhan Lor', '234234234', '07:00:00', '15:00:00'),
+(5, 'Agung Rahmawan', '7100812909871237', 'Kudus', '2000-03-09', 'Karangmalang', '12312423452', '11:00:00', '19:00:00'),
+(6, 'Haikal Kanafi', '12313', 'Pati', '2000-02-15', 'Panjunan', '234234234234', '12:00:00', '20:00:00');
 
 -- --------------------------------------------------------
 
@@ -228,7 +234,8 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `jabatan`) VALUES
 (2, 'super', '1b3231655cebb7a1f783eddf27d254ca', 'supervisor'),
 (3, 'zaini', '202cb962ac59075b964b07152d234b70', 'sales'),
 (4, 'rindho', '202cb962ac59075b964b07152d234b70', 'sales'),
-(5, 'agung', '202cb962ac59075b964b07152d234b70', 'sales');
+(5, 'agung', '202cb962ac59075b964b07152d234b70', 'sales'),
+(6, 'haka', '202cb962ac59075b964b07152d234b70', 'sales');
 
 --
 -- Indexes for dumped tables
@@ -319,13 +326,13 @@ ALTER TABLE `produk`
 -- AUTO_INCREMENT untuk tabel `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `id_sales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_sales` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
