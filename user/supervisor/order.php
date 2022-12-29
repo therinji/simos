@@ -15,7 +15,11 @@ include 'header.php';
             <form action="" method="get" class="row g-3">
                 <div class="mb-2 col-md-5">
                     <label for="tgl" class="col-form-label">Tanggal</label>
-                    <input type="date" class="form-control" name="tgl" value="<?php if(isset($_GET['tgl'])) echo $_GET['tgl'];?>" required>
+                    <div class="input-group">
+                        <input type="date" name="tgl_mulai" class="form-control" value="<?php if(isset($_GET['tgl_mulai'])) echo $_GET['tgl_mulai'];?>" required>
+                        <span class="input-group-text">s/d</span>
+                        <input type="date" name="tgl_berakhir" class="form-control" value="<?php if(isset($_GET['tgl_berakhir'])) echo $_GET['tgl_berakhir'];?>" required>
+                    </div>
                 </div>
                 <div class="col-md-2 mt-5">
                     <button type="submit" class="btn btn-primary btn-sm text-light"><i class="fa fa-filter"></i> Filter</button>
@@ -39,7 +43,14 @@ include 'header.php';
                     <?php
                     $id_sales = $_SESSION['id_user'];
                     $no = 1;
-                    $order = mysqli_query($koneksi, "SELECT * FROM orderan, produk, customer where orderan.id_produk = produk.id_produk and orderan.id_customer = customer.id_customer ORDER BY id_order DESC");
+                    if(isset($_GET['tgl_mulai']) && isset($_GET['tgl_berakhir'])){
+                        $mulai = $_GET['tgl_mulai'];
+                        $berakhir = $_GET['tgl_berakhir'];
+
+                        $order = mysqli_query($koneksi, "SELECT * FROM orderan, produk, customer where orderan.id_produk = produk.id_produk and orderan.id_customer = customer.id_customer and tgl_order between '$mulai' and '$berakhir' ORDER BY id_order DESC");
+                    }else{
+                        $order = mysqli_query($koneksi, "SELECT * FROM orderan, produk, customer where orderan.id_produk = produk.id_produk and orderan.id_customer = customer.id_customer ORDER BY id_order DESC");
+                    }
                     while ($o = mysqli_fetch_array($order)) {
                     ?>
                         <tr>
