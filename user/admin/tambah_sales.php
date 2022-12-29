@@ -33,6 +33,21 @@ include 'header.php';
 						</div>
 
 						<div class="form-group">
+							<label>NIK</label>
+							<input type="number" name="nik" class="form-control" required="required">
+						</div>
+
+						<div class="form-group">
+							<label>Tempat Lahir</label>
+							<input type="text" name="tempat_lahir" class="form-control" required="required">
+						</div>
+
+						<div class="form-group">
+							<label>Tanggal Lahir</label>
+							<input type="date" name="tgl_lahir" class="form-control" required="required">
+						</div>
+
+						<div class="form-group">
 							<label>Alamat</label>
 							<input type="text" name="alamat" class="form-control" required="required">
 						</div>
@@ -42,6 +57,14 @@ include 'header.php';
 							<input type="number" name="no_hp" class="form-control">
 						</div>
 
+						<div class="form-group">
+							<label>Jam Kerja</label>
+							<div class="input-group">
+								<input type="time" name="jam_mulai" class="form-control">
+								<span class="input-group-text">s/d</span>
+								<input type="time" name="jam_berakhir" class="form-control">
+							</div>
+						</div>
 
 						<input type="submit" name="submit" value="Simpan" class="btn btn-primary btn-sm">
 

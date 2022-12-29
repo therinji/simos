@@ -38,18 +38,42 @@ include 'header.php';
 
 						<div class="form-group">
 							<label>Nama</label>
-							<input type="text" name="nama" class="form-control" required="required" value="<?php echo $w['nama'] ?>">
+							<input type="text" name="nama" class="form-control" required="required" value="<?php echo $w['nama'] ?>" required="required">
 							<input type="hidden" name="id" value="<?php echo $w['id_sales'] ?>">
 						</div>
 
 						<div class="form-group">
+							<label>NIK</label>
+							<input type="number" name="nik" class="form-control" value="<?php echo $w['nik'] ?>" required="required">
+						</div>
+
+						<div class="form-group">
+							<label>Tempat Lahir</label>
+							<input type="text" name="tempat_lahir" class="form-control" value="<?php echo $w['tempat_lahir'] ?>" required="required">
+						</div>
+
+						<div class="form-group">
+							<label>Tanggal Lahir</label>
+							<input type="date" name="tgl_lahir" class="form-control" value="<?php echo $w['tgl_lahir'] ?>" required="required">
+						</div>
+
+						<div class="form-group">
 							<label>Alamat</label>
-							<input type="text" name="alamat" class="form-control" required="required" value="<?php echo $w['alamat'] ?>">
+							<input type="text" name="alamat" class="form-control" required="required" value="<?php echo $w['alamat'] ?>" required="required">
 						</div>
 
 						<div class="form-group">
 							<label>Nomor HP</label>
-							<input type="number" name="no_hp" class="form-control" require="required" value="<?php echo $w['no_hp'] ?>">
+							<input type="number" name="no_hp" class="form-control" require="required" value="<?php echo $w['no_hp'] ?>" required="required">
+						</div>
+
+						<div class="form-group">
+							<label>Jam Kerja</label>
+							<div class="input-group">
+								<input type="time" name="jam_mulai" class="form-control" value="<?php echo $w['jam_mulai'] ?>" required="required">
+								<span class="input-group-text">s/d</span>
+								<input type="time" name="jam_berakhir" class="form-control" value="<?php echo $w['jam_berakhir'] ?>" required="required">
+							</div>
 						</div>
 
 						<input type="submit" name="submit" value="Simpan" class="btn btn-primary btn-sm">
