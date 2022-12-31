@@ -14,7 +14,7 @@ include 'header.php';
 
             <a class="btn btn-primary btn-sm mb-3" href="order_tambah.php"><i class="fa fa-user-plus"></i> Tambah Order</a>
 
-            <a class="btn btn-success btn-sm mb-3 float-right" href="#" target="_blank"><i class="fa fa-file"></i> Cetak</a>
+            <a class="btn btn-success btn-sm mb-3 float-right" href="order_cetak.php" target="_blank"><i class="fa fa-file"></i> Cetak</a>
 
 
             <table class="table table-bordered table-hover table-striped table-saya">

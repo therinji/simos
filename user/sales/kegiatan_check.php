@@ -45,7 +45,7 @@ include 'header.php';
 							<label>Upload Bukti</label>
 							<div class="custom-file">
                                 <input type="file" class="custom-file-input" id="customFile" name="bukti_kegiatan" required="required">
-                                <label class="custom-file-label" for="customFile">Choose file</label>
+                                <label class="custom-file-label" for="customFile">Pilih File</label>
                             </div>
 						</div>
 						<input type="submit" name="submit" value="Simpan" class="btn btn-primary btn-sm">
