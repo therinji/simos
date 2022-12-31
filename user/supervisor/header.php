@@ -18,6 +18,10 @@
 	<?php
 	include '../cek_login.php';
 	include '../../koneksi.php';
+
+	if($_SESSION['jabatan_user'] != "supervisor"){
+		header("location:../index.php?pesan=belumlogin");
+	}
 	?>
 
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
