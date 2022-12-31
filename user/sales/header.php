@@ -20,7 +20,7 @@
 	include '../../koneksi.php';
 
 	if($_SESSION['jabatan_user'] != "sales"){
-		header("location:../index.php?pesan=belumlogin");
+		header("location:../../index.php?pesan=belumlogin");
 	}
 	?>
 
