@@ -23,7 +23,15 @@ include 'header.php';
                 </div>
                 <div class="col-md-2 mt-5">
                     <button type="submit" class="btn btn-primary btn-sm text-light"><i class="fa fa-filter"></i> Filter</button>
-                    <a class="btn btn-success btn-sm" href="order_cetak.php<?php if(isset($_GET['tgl_mulai']) && isset($_GET['tgl_berakhir'])) echo "?tgl_mulai=" . $_GET['tgl_mulai'] . "&tgl_berakhir=" . $_GET['tgl_berakhir'];?>" target="_blank"><i class="fa fa-file"></i> Cetak</a>
+                    <?php
+                    if(isset($_GET['tgl_mulai']) && isset($_GET['tgl_berakhir'])){
+                        $mulai = $_GET['tgl_mulai'];
+                        $akhir = $_GET['tgl_berakhir'];
+
+                        echo "<a class='btn btn-success btn-sm' href='order_cetak.php?tgl_mulai=$mulai&tgl_berakhir=$akhir' target='_blank'><i class='fa fa-file'></i> Cetak</a>";
+                    }
+
+                    ?>
                 </div>
                 
             </form>

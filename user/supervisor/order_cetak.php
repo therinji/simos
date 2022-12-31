@@ -14,9 +14,12 @@ include 'header.php';
 include '../../koneksi.php';
 ?>
 
-<h3 class="text-center mb-4">Laporan Data Order</h3>
+<h2 class="text-center">UD Latansa Intiniaga</h2>
+<p class="text-center">Alamat: Sampet, Kedungsari, Gebog, Kudus Regency</p>
+<hr class="mb-4">
+<h4 class="text-center mb-4">Laporan Data Order</h4>
+<p><span>Periode : <?php echo date("d-m-Y", strtotime($_GET['tgl_mulai'])) . " s/d " . date("d-m-Y", strtotime($_GET['tgl_berakhir']));?></span><span class="float-right">Supervisor : Noor Imron</span></p>
 
-		
 <table class="table table-bordered table-hover table-striped table-saya">
     <thead>
         <tr>

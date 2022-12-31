@@ -19,7 +19,14 @@ include 'header.php';
                 </div>
                 <div class="col-md-2 mt-5">
                     <button type="submit" class="btn btn-primary btn-sm text-light"><i class="fa fa-filter"></i> Filter</button>
-                    <a class="btn btn-success btn-sm" href="monitoring_cetak.php?tgl=<?php if(isset($_GET['tgl'])){echo $_GET['tgl'];}?>" target="_blank"><i class="fa fa-file"></i> Cetak</a>
+                    <?php
+                    if(isset($_GET['tgl'])){
+                        $tgl = $_GET['tgl'];
+                        echo "<a class='btn btn-success btn-sm' href='monitoring_cetak.php?tgl=$tgl' target='_blank'><i class='fa fa-file'></i> Cetak</a>";
+                    }
+                    
+                    ?>
+                    
                 </div>
                 
             </form>

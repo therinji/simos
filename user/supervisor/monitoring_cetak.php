@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Cetak Data Order</title>
+	<title>Cetak Data Monitoring Sales</title>
 
 	<link href="../assets/css/bootstrap.css" type="text/css" rel="stylesheet">
 	<script type="text/javascript" src="../assets/js/jquery.js"></script>
@@ -13,10 +13,11 @@
 include 'header.php';
 include '../../koneksi.php';
 ?>
-
-    <h3 class="text-center mb-4">Laporan Monitoring Sales</h3>
-
-            
+    <h2 class="text-center">UD Latansa Intiniaga</h2>
+    <p class="text-center">Alamat: Sampet, Kedungsari, Gebog, Kudus Regency</p>
+    <hr class="mb-4">
+    <h4 class="text-center mb-4">Laporan Monitoring Sales</h4>
+    <p><span>Periode : <?php echo date("d-m-Y", strtotime($_GET['tgl']));?></span><span class="float-right">Supervisor : Noor Imron</span></p>
     <table class="table table-bordered table-hover table-striped table-saya">
         <thead>
             <tr>
@@ -74,8 +75,6 @@ include '../../koneksi.php';
                         }
                             ?>
                 </tbody>
-
-
     </table>
     <script type="text/javascript">
 		window.print();

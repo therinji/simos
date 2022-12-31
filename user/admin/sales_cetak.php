@@ -14,8 +14,10 @@
 	include '../../koneksi.php';
 	?>
 
-	<h3 class="text-center mb-4">Laporan Data Sales</h3>
-
+	<h2 class="text-center">UD Latansa Intiniaga</h2>
+	<p class="text-center">Alamat: Sampet, Kedungsari, Gebog, Kudus Regency</p>
+	<hr class="mb-4">
+	<h4 class="text-center mb-4">Laporan Data Sales</h4>
 	
 	<table class="table table-bordered table-hover table-striped table-saya">
 		<thead>
