@@ -58,6 +58,7 @@ include 'header.php';
                         <th>Pemilik</th>
                         <th>Kunjungan Terakhir</th>
                         <th>Status hari ini</th>
+                        <th>Bukti</th>
                         <th>Opsi</th>
                     </tr>
                 </thead>
@@ -77,17 +78,21 @@ include 'header.php';
                             <td><?php echo $c['no_hp_customer']; ?></td>
                             <td><?php echo $c['pemilik_customer']; ?></td>
                             <td><?php echo $c['kunjungan_terakhir']; ?></td>
-                            <td>
-                                <?php
-                                if($tgl_terakhir == $date_today){
-                                    $cek = true;
-                                    echo "<span class='badge badge-success'>Sudah dikunjungi</span> ";
-                                }else{
-                                    $cek = false;
-                                    echo "<span class='badge badge-danger'>Belum dikunjungi</span> ";
-                                }
-                                ?>
-                            </td>
+                            <?php
+                            if($tgl_terakhir == $date_today){
+                                $cek = true;
+                                $kunjungan = $c['kunjungan_terakhir'];
+
+                                echo "<td><span class='badge badge-success'>Sudah dikunjungi</span></td>";
+                                $foto = mysqli_query($koneksi, "select bukti_kegiatan from kegiatan where waktu_kegiatan='$kunjungan'");
+                                $f = mysqli_fetch_array($foto);
+                                echo "<td><a target='_blank' href='../../uploads/" . $f['bukti_kegiatan'] . "'><img width='100px'src='../../uploads/" . $f['bukti_kegiatan'] . "' class='img-thumbnail' alt=''></a></td>";
+                            }else{
+                                $cek = false;
+                                echo "<td><span class='badge badge-danger'>Belum dikunjungi</span></td>";
+                                echo "<td></td>";
+                            }
+                            ?>
                             <td>
                                 <?php
                                 if(!$cek) echo "<a href='kegiatan_check.php?id=" . $c['id_customer'] . "' class='btn btn-success text-white btn-sm'><i class='fa fa-check'></i></a>";
@@ -110,3 +115,5 @@ include 'header.php';
 <?php
 include 'footer.php';
 ?>
+
+<a href=""></a>

@@ -33,6 +33,7 @@ include 'header.php';
                         <th>Nomor HP</th>
                         <th>Pemilik</th>
                         <th>Kunjungan</th>
+                        <th>Bukti</th>
                         <th>Status</th>
                         <th>Sales</th>
                     </tr>
@@ -66,8 +67,10 @@ include 'header.php';
                                     $d = mysqli_fetch_array($cek_status);
 
                                     echo "<td>" . $d['waktu_kegiatan'] . "</td>";
+                                    echo "<td><a target='_blank' href='../../uploads/" . $d['bukti_kegiatan'] . "'><img width='100px'src='../../uploads/" . $d['bukti_kegiatan'] . "' class='img-thumbnail' alt=''></a></td>";
                                     echo "<td><span class='badge badge-success'>Sudah dikunjungi</span></td>";
                                 }else{
+                                    echo "<td>-</td>";
                                     echo "<td>-</td>";
                                     echo "<td><span class='badge badge-danger'>Belum dikunjungi</span></td>";
                                 }
