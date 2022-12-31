@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 29 Des 2022 pada 14.49
+-- Waktu pembuatan: 31 Des 2022 pada 11.21
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.1.12
 
@@ -43,20 +43,20 @@ CREATE TABLE `customer` (
 
 INSERT INTO `customer` (`id_customer`, `nama_customer`, `alamat_customer`, `no_hp_customer`, `pemilik_customer`, `id_sales`, `kunjungan_terakhir`) VALUES
 (1, 'Arif Jaya', 'Jati Wetan', '234823423', 'Arif Affandi', 4, '0000-00-00 00:00:00'),
-(2, 'Leto Shop', 'Tanjung Karang', '8877121', 'Anik Budiartika', 4, '0000-00-00 00:00:00'),
+(2, 'Leto Shop', 'Tanjung Karang', '8877121', 'Anik Budiartika', 4, '2022-12-29 23:17:21'),
 (3, 'Muhdi Market', 'Pasuruhan Kidul', '67867867', 'Ali Mahmudi', 4, '0000-00-00 00:00:00'),
 (4, 'Harsanto Jaya', 'Pasuruhan Kidul', '1221212', 'Amanda Sulistiyati', 4, '2023-01-01 20:02:10'),
 (5, 'Didik Shop', 'Jati Kulon', '239409234', 'Ahmad Hamdan', 4, '2023-01-01 20:01:36'),
-(6, 'Susi Market', 'Tanjung Karang', '6786786', 'Zulfa Nur Susianti', 4, '0000-00-00 00:00:00'),
+(6, 'Susi Market', 'Tanjung Karang', '6786786', 'Zulfa Nur Susianti', 4, '2022-12-29 06:19:11'),
 (7, 'Heru Jaya', 'Karangmalang', '45096485694', 'Miftahul Ulum', 5, '2023-01-01 20:03:30'),
 (8, 'Roda Lima Shop', 'Klumpit', '876786768', 'Arif Ahmad Jaelani', 5, '0000-00-00 00:00:00'),
 (9, 'Ahmad Jaya Abadi', 'Besito', '879789', 'Ahmad Ilham Adji', 5, '0000-00-00 00:00:00'),
 (10, 'Prambatan Mart', 'Prambatan Lor', '9238434', 'Nafisa Faradilla', 5, '0000-00-00 00:00:00'),
-(11, 'Al Kaesy Mart', 'Terban', '4673624', 'Nada Syaikaila', 5, '0000-00-00 00:00:00'),
-(12, 'Bagas Shop', 'Klaling', '234234', 'Bagaskara Dimastrata', 5, '0000-00-00 00:00:00'),
+(11, 'Al Kaesy Mart', 'Terban', '4673624', 'Nada Syaikaila', 5, '2022-12-29 16:54:49'),
+(12, 'Bagas Shop', 'Klaling', '234234', 'Bagaskara Dimastrata', 5, '2022-12-29 17:01:06'),
 (13, 'Nawa Shop', 'Jurang', '7767567', 'Ilham Syaqib', 3, '0000-00-00 00:00:00'),
 (14, 'Tiga Saudara Market', 'Jurang', '123107', 'M Wurul Tri Rahman', 3, '0000-00-00 00:00:00'),
-(15, 'Kajar Market', 'Kajar', '868578', 'Novita Dwi Salsa', 3, '0000-00-00 00:00:00'),
+(15, 'Kajar Market', 'Kajar', '868578', 'Novita Dwi Salsa', 3, '2022-12-29 06:17:30'),
 (16, 'Arifin Jaya', 'Menawan', '878678678', 'Arifin Mahmudi', 3, '2022-12-25 19:43:59'),
 (17, 'Garuda Market', 'Piji', '8872112', 'Sofiatun ', 3, '2022-12-25 19:44:39'),
 (18, 'Zakiman Mart', 'Cendono', '7855534', 'M Agus Zaki', 3, '0000-00-00 00:00:00');
@@ -105,21 +105,27 @@ INSERT INTO `jadwal` (`id_customer`, `hari_jadwal`) VALUES
 CREATE TABLE `kegiatan` (
   `id_kegiatan` int(11) NOT NULL,
   `id_customer` int(11) NOT NULL,
-  `waktu_kegiatan` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `waktu_kegiatan` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `bukti_kegiatan` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data untuk tabel `kegiatan`
 --
 
-INSERT INTO `kegiatan` (`id_kegiatan`, `id_customer`, `waktu_kegiatan`) VALUES
-(1, 7, '2022-12-25 12:21:14'),
-(2, 16, '2022-12-25 12:43:59'),
-(3, 17, '2022-12-25 12:44:39'),
-(4, 4, '2022-12-25 12:45:24'),
-(5, 5, '2023-01-01 13:01:36'),
-(6, 4, '2023-01-01 13:02:10'),
-(7, 7, '2023-01-01 13:03:30');
+INSERT INTO `kegiatan` (`id_kegiatan`, `id_customer`, `waktu_kegiatan`, `bukti_kegiatan`) VALUES
+(1, 7, '2022-12-25 12:21:14', ''),
+(2, 16, '2022-12-25 12:43:59', ''),
+(3, 17, '2022-12-25 12:44:39', ''),
+(4, 4, '2022-12-25 12:45:24', ''),
+(5, 5, '2023-01-01 13:01:36', ''),
+(6, 4, '2023-01-01 13:02:10', ''),
+(7, 7, '2023-01-01 13:03:30', ''),
+(8, 2, '2022-12-29 16:17:21', ''),
+(10, 15, '2022-12-28 23:17:30', '20221229061730.jpg'),
+(11, 6, '2022-12-28 23:19:11', '20221229061911.jpg'),
+(12, 11, '2022-12-29 09:54:49', '20221229165449.jpg'),
+(13, 12, '2022-12-29 10:01:06', '20221229170106.jpg');
 
 -- --------------------------------------------------------
 
@@ -308,7 +314,7 @@ ALTER TABLE `jadwal`
 -- AUTO_INCREMENT untuk tabel `kegiatan`
 --
 ALTER TABLE `kegiatan`
-  MODIFY `id_kegiatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_kegiatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `orderan`
