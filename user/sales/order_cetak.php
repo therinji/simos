@@ -12,6 +12,7 @@
 <?php
 include 'header.php';
 include '../../koneksi.php';
+$date_today = date("d-m-Y");
 ?>
 
 <h2 class="text-center">UD Latansa Intiniaga</h2>
@@ -52,6 +53,20 @@ include '../../koneksi.php';
     </tbody>
 
 </table>
+<table style="float:right; margin-right:30px; text-align:center">
+    <tr>
+        <td>Kudus, <?=$date_today ?></td>
+    </tr>
+    <tr>
+        <td>Sales</td>
+    </tr>
+    <tr style="height:50px">
+    </tr>
+    <tr>
+        <td><?=ucfirst($_SESSION['nama_user'])?></td>
+    </tr>
+</table>
+
 <script type="text/javascript">
 	window.print();
 </script>
